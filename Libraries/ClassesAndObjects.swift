@@ -10,6 +10,8 @@ import Foundation
 
 import UIKit
 
+//var booksInSection: NSString = [Book]()
+
 class Library {
     var branch: String
     var hours: String
@@ -30,6 +32,7 @@ class Shelf {
   init(subjects: String){
     self.section = subjects;
   }
+  
 }
 
 class Book {
@@ -48,6 +51,12 @@ class Book {
   }
   func unshelf() {
     self.isShelved = false
+  }
+  
+  func pushToSection() {
+    if self.isShelved == true {
+      booksInSection.append(self.title)
+    }
   }
 }
 
